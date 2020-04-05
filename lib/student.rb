@@ -37,7 +37,7 @@ require_relative "../config/environment.rb"
       WHERE name = ? 
       
       SQL
-      sql = DB[:conn].execute(sql,name)[0] 
+      new_row = DB[:conn].execute(sql,name)[0] 
       self.new_from_db(row)
     
   end 
