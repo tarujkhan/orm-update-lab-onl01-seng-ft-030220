@@ -37,7 +37,7 @@ require_relative "../config/environment.rb"
       WHERE name = ? 
       LIMIT l
       SQL
-      DB[:conn].execute(sql,name).map do |row|
+      DB[:conn].execute(sql,name).collect do |row|
      # self.new_from_db(row)
     end.first 
   end 
