@@ -35,7 +35,7 @@ require_relative "../config/environment.rb"
       SELECT * 
       FROM students 
       WHERE name = ? 
-      LIMIT l
+      
       SQL
       DB[:conn].execute(sql,name).collect do |row|
      self.new_from_db(row)
