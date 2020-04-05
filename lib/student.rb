@@ -35,12 +35,11 @@ require_relative "../config/environment.rb"
       SELECT * 
       FROM students 
       WHERE name = ? 
-      LIMIT l
+      
       SQL
-      binding.pry
-      DB[:conn].execute(sql,name).map do |row|
-      self.new_from_db(row)
-    end.first 
+      new_row = DB[:conn].execute(sql,name)[0] 
+    
+    new_from_db(new_row)
   end 
       
  
