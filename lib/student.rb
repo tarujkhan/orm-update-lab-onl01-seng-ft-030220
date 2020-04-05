@@ -37,7 +37,7 @@ require_relative "../config/environment.rb"
       WHERE name = ? 
       
       SQL
-      DB[:conn].execute(sql,name).map do |row|
+      DB[:conn].execute(sql,name).map[0] 
      self.new_from_db(row)
     end
   end 
