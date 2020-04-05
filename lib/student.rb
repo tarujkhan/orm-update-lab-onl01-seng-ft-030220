@@ -39,7 +39,7 @@ require_relative "../config/environment.rb"
       SQL
       DB[:conn].execute(sql,name)[0] 
      self.new_from_db(row)
-    end
+    
   end 
       
  
